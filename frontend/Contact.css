@@ -1,0 +1,214 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* RAIN BACKGROUND */
+#rainCanvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:radial-gradient(circle at top,#6fb1fc,#1e3c72);
+}
+
+/* BACK ARROW */
+.back-arrow{
+  position:fixed;
+  top:15px;
+  left:15px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  z-index:1000;
+  transition:.3s;
+}
+.back-arrow:hover{
+  transform:scale(1.1);
+}
+
+/* MAIN LAYOUT */
+.contact-wrapper{
+  min-height:100vh;
+  padding:90px 20px 40px;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  gap:40px;
+}
+
+/* LEFT */
+.contact-info{
+  flex:1;
+  background:rgba(255,255,255,.08);
+  padding:25px;
+  border-radius:16px;
+  backdrop-filter:blur(6px);
+}
+
+.contact-info h1{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.contact-info p{
+  opacity:.9;
+  line-height:1.6;
+}
+
+.details p{
+  margin:10px 0;
+}
+.details a{
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px dashed rgba(255,255,255,.5);
+}
+
+/* CONTACT ICON */
+.contact-icon{
+  width:90px;
+  height:90px;
+  margin:30px auto 0;
+  position:relative;
+  cursor:pointer;
+}
+
+.pulse-ring{
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.25);
+  animation:pulse 2.5s infinite;
+}
+
+.icon-circle{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,.4);
+  position:relative;
+  animation:float 4s ease-in-out infinite;
+}
+
+.click-text{
+  position:absolute;
+  bottom:-22px;
+  font-size:12px;
+  background:rgba(0,0,0,.6);
+  padding:3px 8px;
+  border-radius:6px;
+  opacity:0;
+  transition:.3s;
+}
+.contact-icon:hover .click-text{
+  opacity:1;
+}
+
+/* RIGHT FORM */
+.contact-box{
+  flex:1;
+  background:rgba(255,255,255,.95);
+  color:#000;
+  padding:25px;
+  border-radius:14px;
+}
+
+.contact-box input,
+.contact-box textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border:none;
+  border-bottom:1px solid #ccc;
+}
+
+.contact-box button{
+  background:linear-gradient(135deg,#ff8364,#ff5f3d);
+  border:none;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.4s;
+}
+.contact-box button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(255,95,61,.6);
+}
+
+.contact-box iframe{
+  width:100%;
+  height:200px;
+  border:none;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-btn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:55px;
+  height:55px;
+  background:#25d366;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:20px;
+  animation:whPulse 2.5s infinite;
+}
+
+@keyframes whPulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+  70%{box-shadow:0 0 0 25px rgba(37,211,102,0)}
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  opacity:.8;
+}
+
+/* ANIMATIONS */
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.6}
+  70%{transform:scale(1.6);opacity:0}
+  100%{opacity:0}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .contact-wrapper{
+    flex-direction:column;
+  }
+}

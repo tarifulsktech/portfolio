@@ -1,0 +1,822 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#fff;
+  overflow-x:hidden;
+}
+
+/* NETWORK BG */
+#network{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+/* NAVBAR */
+header{
+  position:fixed;
+  width:100%;
+  background:hsl(0, 18%, 91%);
+  box-shadow:0 2px 10px rgba(17, 192, 72, 0.08);
+  z-index:1000;
+}
+
+.navbar{
+  max-width:1250px;
+  margin:auto;
+  padding:16px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#131305;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+}
+
+.nav-links li{
+  margin-left:26px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1f2937;
+  font-weight:500;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:3px;
+  background:#2563eb;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  display:block;
+  width:26px;
+  height:3px;
+  background:#111;
+  margin:5px 0;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:140px 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hero-text h1{
+  font-size:44px;
+  color:#0b132b;
+}
+
+.hero-text h2{
+  font-size:52px;
+  color:#0b132b;
+}
+
+.hero-text h2 span{
+  color:#ff8c00;
+}
+
+.typing{
+  margin:14px 0;
+  font-size:22px;
+  color:#7a0c0c;
+  font-weight:500;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 32px;
+  background:#1d4ed8;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#1e40af;
+}
+
+.social{
+  margin-top:24px;
+}
+
+.social i{
+  font-size:18px;
+  margin-right:14px;
+  padding:10px;
+  border-radius:50%;
+  background:#000;
+  color:#00d9ff;
+  cursor:pointer;
+}
+
+/* AVATAR */
+.avatar-circle{
+  width:380px;
+  height:380px;
+  background:#ffd400;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.avatar-circle img{
+  width:85%;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+
+  .avatar-circle{
+    width:260px;
+    height:260px;
+    margin-bottom:30px;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    flex-direction:column;
+    background:#fff;
+    width:220px;
+    transition:.4s;
+  }
+
+  .nav-links.active{
+    right:20px;
+  }
+
+  .nav-links li{
+    margin:18px 0;
+    text-align:center;
+  }
+
+  .hamburger{
+    display:block;
+  }
+}
+/* ===== ADVANCED SOCIAL ICONS ===== */
+.advanced-social{
+  display:flex;
+  gap:16px;
+  margin-top:30px;
+}
+
+.advanced-social .icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0f172a;
+  color:#38bdf8;
+  font-size:18px;
+  position:relative;
+  overflow:hidden;
+  transition:.4s ease;
+}
+
+.advanced-social .icon::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#38bdf8,#6366f1);
+  transform:scale(0);
+  transition:.4s;
+  z-index:-1;
+}
+
+.advanced-social .icon:hover{
+  color:#fff;
+  transform:translateY(-8px) rotate(8deg);
+  box-shadow:0 15px 35px rgba(56,189,248,.5);
+}
+
+.advanced-social .icon:hover::before{
+  transform:scale(1);
+}
+
+/* individual glow */
+.icon.linkedin:hover{box-shadow:0 0 25px #0a66c2}
+.icon.github:hover{box-shadow:0 0 25px #333}
+.icon.twitter:hover{box-shadow:0 0 25px #1da1f2}
+.icon.telegram:hover{box-shadow:0 0 25px #229ed9}
+.icon.instagram:hover{box-shadow:0 0 25px #e1306c}
+.icon.dev:hover{box-shadow:0 0 25px #000}
+/* ===== CTA BUTTONS ===== */
+.cta-buttons{
+  margin-top:28px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* HIRE ME – Border animation */
+.hire-btn{
+  position:relative;
+  padding:14px 36px;
+  color:#22c55e;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:40px;
+  overflow:hidden;
+  border:2px solid #22c55e;
+  transition:.4s;
+}
+
+.hire-btn span{
+  position:absolute;
+  inset:0;
+  background:#22c55e;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.4s;
+  z-index:-1;
+}
+
+.hire-btn:hover{
+  color:#fff;
+  box-shadow:0 0 30px rgba(34,197,94,.8);
+}
+
+.hire-btn:hover span{
+  transform:scaleX(1);
+}
+
+/* DOWNLOAD RESUME – GAJAB */
+.resume-btn-adv{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 34px;
+  border-radius:40px;
+  background:linear-gradient(135deg,#f97316,#ef4444);
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(239,68,68,.6);
+}
+
+.resume-btn-adv::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);
+  transition:.6s;
+}
+
+.resume-btn-adv:hover::after{
+  left:100%;
+}
+
+.resume-btn-adv:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 20px 45px rgba(239,68,68,.9);
+}
+
+#robot-container {
+  width: 250px;
+  height: 320px;
+  margin: auto;
+}
+
+.ai-actions button {
+  margin: 6px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 20px;
+  background: #00b4ff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* ===== ROBOT SPEECH TEXT FIX ===== */
+
+.hero-robot{
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 380px;   /* <-- text limit */
+}
+
+/* Robot canvas */
+#robot-container{
+  width: 250px;
+  height: 320px;
+}
+
+/* Spoken text box */
+#aiText{
+  margin-top: 16px;
+  padding: 14px 18px;
+  max-width: 360px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111827;
+  text-align: center;
+
+  /* important */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Buttons spacing */
+.ai-actions{
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .hero-robot{
+    max-width: 100%;
+  }
+
+  #robot-container{
+    width: 250px;
+    height: 320px;
+  }
+
+  #aiText{
+    max-width: 90%;
+    font-size: 14px;
+  }
+}
+/* ===== MOVE ROBOT TEXT UP ===== */
+
+#aiText{
+  margin-top: 2px;      /* আগের 16px/12px থাকলে override হবে */
+  transform: translateY(-8px);  /* 👈 text উপরে উঠবে */
+}
+
+/* ===== TIGHT ROBOT TEXT ALIGNMENT ===== */
+
+.hero-robot{
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;   
+  gap: 2px;                      
+}
+
+/* Robot canvas */
+#robot-container{
+  width: 250px;
+  height: 320px;
+  margin-bottom: -8px;           
+}
+
+/* Speech text */
+#aiText{
+  margin-top: 0;
+  padding: 12px 16px;
+  max-width: 340px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #111827;
+  text-align: center;
+
+  /* 👇 KEY PART */
+  transform: translateY(-28px);  
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Buttons close to text */
+.ai-actions{
+  margin-top: -16px;           
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+/* ===== AI BOOT INTRO ===== */
+
+#bootScreen{
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.boot-box{
+  text-align: center;
+  color: #e5e7eb;
+}
+
+/* ===== FAST SYSTEM GLITCH TEXT ===== */
+
+.glitch{
+  font-size: 22px;
+  letter-spacing: 2px;
+  position: relative;
+  animation: glitch 0.4s infinite;   /* 👈 faster */
+}
+
+/* shadow layers */
+.glitch::before,
+.glitch::after{
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0.4;                      /* 👈 lighter */
+}
+
+/* blue flick */
+.glitch::before{
+  color: #38bdf8;
+  animation: glitchTop 0.3s infinite;
+}
+
+/* orange flick */
+.glitch::after{
+  color: #f97316;
+  animation: glitchBottom 0.25s infinite;
+}
+
+/* keyframes – short sharp movement */
+@keyframes glitch{
+  0%{transform:none}
+  20%{transform:translateX(-1px)}
+  40%{transform:translateX(1px)}
+  60%{transform:translateX(-1px)}
+  100%{transform:none}
+}
+
+@keyframes glitchTop{
+  0%{transform:none}
+  50%{transform:translate(-1px,-1px)}
+  100%{transform:none}
+}
+
+@keyframes glitchBottom{
+  0%{transform:none}
+  50%{transform:translate(1px,1px)}
+  100%{transform:none}
+}
+
+@keyframes glitch{
+  0%,100%{transform:none}
+  20%{transform:skew(-2deg)}
+  40%{transform:skew(2deg)}
+}
+
+@keyframes glitchTop{
+  0%{transform:translate(0)}
+  50%{transform:translate(-2px,-2px)}
+}
+
+@keyframes glitchBottom{
+  0%{transform:translate(0)}
+  50%{transform:translate(2px,2px)}
+}
+
+/* Progress Bar */
+.boot-bar{
+  width: 280px;
+  height: 6px;
+  background: rgba(255,255,255,.15);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 24px auto 12px;
+}
+
+.boot-bar span{
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,#38bdf8,#22c55e);
+  transition: .2s;
+}
+
+#bootPercent{
+  font-size: 14px;
+  color: #38bdf8;
+}
+
+/* Hide scroll */
+body.booting{
+  overflow: hidden;
+}
+
+/* Reveal animation */
+body.reveal{
+  animation: reveal 1s ease;
+}
+
+@keyframes reveal{
+  from{opacity:0; transform:scale(1.02)}
+  to{opacity:1; transform:scale(1)}
+}
+.typing::after{
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  0%,50%,100%{opacity:1}
+  25%,75%{opacity:0}
+}
+/* ==============================
+   ADVANCED MOBILE RESPONSIVE FIX
+============================== */
+
+/* Tablet & below */
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 6% 60px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-robot {
+    margin-top: 20px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 576px) {
+
+  /* Headings */
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text h2 {
+    font-size: 38px;
+  }
+
+  .hero-text h2 span {
+    display: inline-block;
+  }
+
+  .typing {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  /* CTA buttons */
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .hire-btn,
+  .resume-btn-adv {
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Social icons */
+  .advanced-social {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .advanced-social .icon {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  /* Robot area */
+  .hero-robot {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #robot-container {
+    width: 295px;
+    height: 320px;
+  }
+
+  #aiText {
+    font-size: 14px;
+    max-width: 90%;
+    padding: 10px 14px;
+  }
+
+  .ai-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -8px;
+  }
+
+  .ai-actions button {
+    width: 160px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 360px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .typing {
+    font-size: 16px;
+  }
+}
+/* ==============================
+   MOBILE ROBOT MIDDLE POSITION
+============================== */
+
+@media (max-width: 576px) {
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Robot section move up */
+  .hero-robot {
+    margin-top: -40px;     /* 👈 robot up */
+    margin-bottom: 20px;
+  }
+
+  /* Fine control robot canvas */
+  #robot-container {
+    margin-top: -10px;     /* 👈 extra fine tune */
+  }
+
+  /* Text stays close to robot */
+  #aiText {
+    margin-top: -6px;
+  }
+}
+/* ================= HACKER BOOT ================= */
+#bootScreen {
+  position: fixed;
+  inset: 0;
+  background: #020202;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  font-family: "Courier New", monospace;
+}
+
+.terminal {
+  width: 340px;
+  color: #00ff9c;
+  font-size: 13px;
+  text-shadow: 0 0 6px rgba(0,255,156,0.4);
+}
+
+/* Title */
+.term-title {
+  margin-bottom: 12px;
+  color: #00ff9c;
+  letter-spacing: 2px;
+}
+
+/* Logs */
+.logs {
+  height: 140px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.logs p {
+  margin: 4px 0;
+  animation: flicker 1.6s infinite;
+}
+
+/* Progress bar */
+.term-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0,255,156,0.15);
+  overflow: hidden;
+}
+
+#bootProgress {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #00ff9c;
+  box-shadow: 0 0 10px rgba(0,255,156,0.8);
+  transition: width 0.15s linear;
+}
+
+#bootPercent {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #00ff9c;
+}
+
+/* Flicker effect */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+/* Scanline */
+#bootScreen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+/* Main site reveal */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
