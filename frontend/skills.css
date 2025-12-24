@@ -1,0 +1,311 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:#fff;
+}
+
+/* ================= FULL PAGE ================= */
+.skills-page{
+  min-height:100vh;
+  padding:80px 20px;
+  text-align:center;
+  position:relative;
+}
+
+/* ================= TOP TEXT ================= */
+.page-title{
+  font-size:38px;
+  color:#facc15;
+  margin-bottom:10px;
+}
+
+.page-desc{
+  max-width:720px;
+  margin:0 auto 50px;
+  color:#bdbdbd;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* ================= TWO CARDS WRAPPER ================= */
+.cards-wrapper{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+/* ================= MAIN CARD ================= */
+.skills-card{
+  background:#111;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* ================= CARD TITLE ================= */
+.card-title{
+  font-size:22px;
+  color:#facc15;
+  margin-bottom:25px;
+  position:relative;
+  display:inline-block;
+}
+
+.card-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:100%;
+  height:2px;
+  background:#facc15;
+}
+
+/* ================= GRID ================= */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:18px;
+}
+
+/* ================= SKILL BOX ================= */
+.skill-box{
+  background:#1a1a1a;
+  padding:22px 10px;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  transition:0.3s ease;
+}
+
+/* ===== ICON (NO FORCED COLOR – ORIGINAL BRAND COLOR) ===== */
+.skill-box i{
+  font-size:32px;
+  animation: floatUpDown 4s ease-in-out infinite,
+             swaySide 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Text */
+.skill-box span{
+  font-size:14px;
+}
+
+/* ================= HOVER ================= */
+.skill-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 20px rgba(250,204,21,0.35);
+}
+
+/* Stop icon floating on hover */
+.skill-box:hover i{
+  animation-play-state: paused;
+  transform:translateY(-6px) scale(1.1);
+}
+
+/* ================= ICON ANIMATION DELAYS ================= */
+.skill-box:nth-child(1) i{ animation-delay:0s, 0s; }
+.skill-box:nth-child(2) i{ animation-delay:0.6s, 1s; }
+.skill-box:nth-child(3) i{ animation-delay:1.2s, 2s; }
+.skill-box:nth-child(4) i{ animation-delay:1.8s, 3s; }
+.skill-box:nth-child(5) i{ animation-delay:0.4s, 1.5s; }
+.skill-box:nth-child(6) i{ animation-delay:1s, 2.5s; }
+.skill-box:nth-child(7) i{ animation-delay:1.6s, 0.8s; }
+.skill-box:nth-child(8) i{ animation-delay:2.2s, 1.8s; }
+
+/* ================= FLOAT ANIMATIONS ================= */
+@keyframes floatUpDown{
+  0%   { transform:translateY(0); }
+  50%  { transform:translateY(-10px); }
+  100% { transform:translateY(0); }
+}
+
+@keyframes swaySide{
+  0%   { transform:translateX(0); }
+  50%  { transform:translateX(6px); }
+  100% { transform:translateX(0); }
+}
+
+/* ================= LEFT VERTICAL SKILLS TEXT ================= */
+.vertical-skill-text{
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%) rotate(-90deg);
+  font-size:14px;
+  letter-spacing:6px;
+  color:#facc15;
+  opacity:0.9;
+  animation: skillFloat 3.5s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.vertical-skill-text::before{
+  content:"";
+  position:absolute;
+  left:-18px;
+  top:-8px;
+  width:3px;
+  height:120%;
+  background:#facc15;
+  border-radius:2px;
+  box-shadow:0 0 12px rgba(250,204,21,0.6);
+  animation: linePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes skillFloat{
+  0%{
+    opacity:0.4;
+    transform:translateY(-50%) rotate(-90deg) translateX(8px);
+  }
+  50%{
+    opacity:1;
+    transform:translateY(-50%) rotate(-90deg) translateX(0);
+  }
+  100%{
+    opacity:0.4;
+    transform:translateY(-50%) rotate(-90deg) translateX(8px);
+  }
+}
+
+@keyframes linePulse{
+  0%{ opacity:0.3; }
+  50%{ opacity:1; }
+  100%{ opacity:0.3; }
+}
+
+/* ================= BACK TO HOME BUTTON ================= */
+.back-home{
+  position:fixed;
+  bottom:26px;
+  right:26px;
+  background:#facc15;
+  color:#000;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 15px 35px rgba(250,204,21,0.45);
+  transition:0.35s ease;
+  z-index:999;
+}
+
+.back-home i{
+  transition:0.35s ease;
+}
+
+.back-home:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(250,204,21,0.65);
+}
+
+.back-home:hover i{
+  transform:translateX(-6px);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:600px){
+
+  .skills-page{
+    padding:50px 14px;
+  }
+
+  .page-title{
+    font-size:28px;
+    margin-bottom:6px;
+  }
+
+  .page-desc{
+    font-size:13px;
+    margin-bottom:30px;
+  }
+
+  .cards-wrapper{
+    gap:20px;
+  }
+
+  .skills-card{
+    padding:22px;
+  }
+
+  .card-title{
+    font-size:20px;
+    margin-bottom:18px;
+  }
+
+  .skills-grid{
+    gap:14px;
+  }
+
+  .skill-box{
+    padding:18px 8px;
+  }
+
+  .vertical-skill-text{
+    left:6px;
+    font-size:11px;
+    letter-spacing:4px;
+    opacity:0.7;
+  }
+
+  .vertical-skill-text::before{
+    height:100%;
+    left:-12px;
+  }
+
+  .skill-box i{
+    animation-duration:5s, 8s;
+  }
+
+  .back-home{
+    bottom:18px;
+    right:18px;
+    padding:10px 15px;
+    font-size:13px;
+  }
+}
+.skill-box{
+  position: relative;
+}
+/* ================= SKILL PERCENT (HOVER) ================= */
+.skill-percent{
+  position:absolute;
+  top:10px;
+  right:12px;
+  font-size:13px;
+  font-weight:600;
+  color:#facc15;
+  background:rgba(0,0,0,0.4);
+  padding:4px 8px;
+  border-radius:12px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:0.3s ease;
+  pointer-events:none;
+}
+
+/* show percentage on hover */
+.skill-box:hover .skill-percent{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (max-width:600px){
+  .skill-percent{
+    font-size:12px;
+    padding:3px 7px;
+  }
+}

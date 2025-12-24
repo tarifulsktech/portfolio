@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Works</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./My_Works.css">
+</head>
+<body>
+
+<!-- BACK TO HOME -->
+<a href="./index.html" class="back-home">←</a>
+
+<section class="myworks" id="top">
+  <h1 class="fade-down">My Works</h1>
+  <p class="subtitle fade-down">
+    A collection of projects where I solved real-world problems.
+  </p>
+
+  <div class="project-grid">
+
+    <!-- FINAL YEAR PROJECT -->
+    <div class="project-card reveal">
+      <span class="fy-badge pulse">Final Year Project</span>
+      <img src="images/doctor to doctor.jpeg">
+
+      <h2>Doctor-to-Doctor Image Authentication System</h2>
+      <p class="desc">
+        Secure medical platform enabling verified doctors to upload, share
+        and authenticate diagnostic images with encryption and API validation.
+      </p>
+
+      <div class="tags">
+        <span>#Python</span><span>#Flask</span><span>#SQL</span>
+        <span>#REST API</span><span>#Encryption</span>
+      </div>
+
+      <ul>
+        <li>Doctor authentication & secure image verification</li>
+        <li>Encrypted data + API based validation</li>
+      </ul>
+
+      <div class="buttons">
+        <button onclick="openDetails('doctor')">View Details</button>
+        <button class="outline" onclick="openCase('doctor')">Case Study</button>
+      </div>
+    </div>
+
+    <!-- STUDENT -->
+    <div class="project-card reveal">
+      <img src="images/Student management.jpeg">
+      <h2>Student Management System</h2>
+      <p class="desc">
+        Web application for managing student records with secure CRUD
+        operations using Flask backend and SQL database.
+      </p>
+
+      <div class="tags">
+        <span>#Python</span><span>#Flask</span><span>#SQL</span>
+        <span>#JavaScript</span>
+      </div>
+
+      <ul>
+        <li>Add, edit and delete student records</li>
+        <li>Admin-friendly dashboard</li>
+      </ul>
+
+      <div class="buttons">
+        <button onclick="openDetails('student')">View Details</button>
+        <button class="outline" onclick="openCase('student')">Case Study</button>
+      </div>
+    </div>
+
+    <!-- BLOG -->
+    <div class="project-card reveal">
+      <img src="images/Blog.jpeg">
+      <h2>Blog Application</h2>
+      <p class="desc">
+        Blogging platform with user login, post creation and comment system
+        designed with responsive UI.
+      </p>
+
+      <div class="tags">
+        <span>#Python</span><span>#Django</span>
+        <span>#HTML</span><span>#CSS</span>
+      </div>
+
+      <ul>
+        <li>User authentication & content management</li>
+        <li>SQLite database integration</li>
+      </ul>
+
+      <div class="buttons">
+        <button onclick="openDetails('blog')">View Details</button>
+        <button class="outline" onclick="openCase('blog')">Case Study</button>
+      </div>
+    </div>
+
+    <!-- WEATHER -->
+    <div class="project-card reveal">
+      <img src="images/Weather.jpeg">
+      <h2>Weather App</h2>
+      <p class="desc">
+        Weather forecast application fetching real-time data from open API
+        with Flask backend and dynamic frontend.
+      </p>
+
+      <div class="tags">
+        <span>#Python</span><span>#Flask</span>
+        <span>#JavaScript</span><span>#API</span>
+      </div>
+
+      <ul>
+        <li>Live weather data by location</li>
+        <li>Dynamic UI updates</li>
+      </ul>
+
+      <div class="buttons">
+        <button onclick="openDetails('weather')">View Details</button>
+        <button class="outline" onclick="openCase('weather')">Case Study</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="My_Works.js"></script>
+</body>
+</html>

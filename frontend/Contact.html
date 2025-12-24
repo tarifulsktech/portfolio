@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Tariful Sk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+<!-- RAIN BACKGROUND -->
+<canvas id="rainCanvas"></canvas>
+
+<!-- BACK TO HOME -->
+<a href="./index.html" class="back-arrow">←</a>
+
+<section class="contact-wrapper">
+
+  <!-- LEFT INFO -->
+  <div class="contact-info">
+    <h1>Have Any Questions?</h1>
+
+    <p>
+      Feel free to reach out for collaboration, project discussion,
+      or any professional inquiry. I’m always open to new opportunities.
+    </p>
+
+    <div class="details">
+      <p>Phone: <a href="tel:+919547460101">+91 9547460101</a></p>
+      <p>Email: <a href="mailto:tarifulsk249@gmail.com">tarifulsk249@gmail.com</a></p>
+      <p>Location: Kalyani, West Bengal, India</p>
+    </div>
+
+    <!-- ANIMATED CONTACT ICON -->
+    <div class="contact-icon" id="contactIcon">
+      <div class="pulse-ring"></div>
+      <div class="icon-circle">
+        Chat
+        <span class="click-text">Click Me</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="contact-box">
+    <form id="contactForm">
+      <input type="text" id="username" placeholder="Enter Your Name *" required>
+      <input type="email" placeholder="Enter Your Email *" required>
+      <textarea rows="4" placeholder="Enter Your Message *" required></textarea>
+      <button type="submit">Send Message →</button>
+    </form>
+
+    <!-- GOOGLE MAP -->
+    <iframe
+      src="https://www.google.com/maps?q=Kalyani,West%20Bengal,India&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="#" id="whatsappBtn" class="whatsapp-btn">W</a>
+
+<footer>
+  © 2025 Tariful Sk | Full-Stack Web Developer
+</footer>
+
+<script src="Contact.js"></script>
+</body>
+</html>
