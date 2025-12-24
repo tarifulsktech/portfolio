@@ -1,0 +1,294 @@
+/* ================= THEME VARIABLES ================= */
+:root{
+  --accent:#00f2fe;
+  --bg:#0b0f19;
+  --card:rgba(255,255,255,0.06);
+  --text:#ffffff;
+}
+
+/* 🔥 THEME OVERRIDES (BOUND TO BODY) */
+body.light-theme{
+  --bg:#f8fafc;
+  --text:#1e293b;
+  --card:#ffffff;
+  --accent:#2563eb;
+}
+
+body.dark-theme{
+  --bg:#0b0f19;
+  --text:#ffffff;
+  --card:rgba(255,255,255,0.06);
+  --accent:#00f2fe;
+}
+
+body.gradient-theme{
+  --bg:linear-gradient(135deg,#0f172a,#1e293b);
+  --text:#ffffff;
+  --card:rgba(255,255,255,0.1);
+  --accent:#f59e0b;
+}
+
+/* ================= BASE ================= */
+*{
+  box-sizing:border-box;
+  font-family:Inter,Segoe UI,sans-serif;
+}
+
+html, body{
+  min-height:100%;
+}
+
+html{
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  transition:background .4s,color .4s;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+}
+.back-link{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+.theme-btns button{
+  margin-left:8px;
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.2);
+  background:transparent;
+  color:var(--text);
+  cursor:pointer;
+  transition:.25s ease;
+}
+.theme-btns button:hover{
+  background:var(--accent);
+  color:#000;
+  box-shadow:0 0 15px rgba(0,242,254,.4);
+  transform:translateY(-2px);
+}
+.theme-btns button:active{
+  transform:scale(.95);
+}
+
+/* ================= LAYOUT ================= */
+.dashboard-wrapper{
+  display:grid;
+  grid-template-columns:1.2fr .8fr 1fr;
+  gap:20px;
+  max-width:1300px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ================= COMMON CARD ================= */
+.grid-card,
+.glass-card,
+.price-item,
+.testimonial-box{
+  background:var(--card);
+  padding:16px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  margin-bottom:14px;
+}
+
+/* ================= HERO ================= */
+.hero-text h1{
+  font-size:36px;
+  margin:10px 0;
+}
+.status-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 14px;
+  border-radius:20px;
+  background:rgba(0,242,254,.18);
+  color:var(--accent);
+  font-size:13px;
+}
+
+/* ================= STATS ================= */
+.stats-row{
+  display:flex;
+  gap:10px;
+  margin:16px 0;
+}
+.stat-box{
+  flex:1;
+  text-align:center;
+  padding:14px;
+  background:var(--card);
+  border-radius:14px;
+}
+.stat-box h3{
+  margin:0;
+  color:var(--accent);
+}
+
+/* ================= PROCESS ================= */
+.mini-steps span{
+  display:inline-block;
+  margin:6px 6px 0 0;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:12px;
+  background:rgba(255,255,255,.1);
+}
+
+/* ================= TECH STACK ================= */
+.tech-tags span{
+  display:inline-block;
+  padding:6px 12px;
+  margin:6px 6px 0 0;
+  border-radius:16px;
+  background:rgba(255,255,255,.1);
+  font-size:12px;
+}
+
+/* ================= PRICING ================= */
+.price-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.price-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  transition:.3s;
+}
+.price-item:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 18px rgba(0,242,254,.2);
+}
+.price-item.featured{
+  border:2px solid var(--accent);
+  box-shadow:0 0 22px rgba(0,242,254,.35);
+}
+
+/* ================= FORM ================= */
+.glass-card{
+  backdrop-filter:blur(14px);
+  padding:30px;
+}
+input,textarea{
+  width:100%;
+  background:rgba(0,0,0,.25);
+  border:1px solid #444;
+  color:var(--text);
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+}
+textarea{resize:none}
+
+/* ================= BUDGET RADIO ================= */
+.budget-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin:16px 0;
+}
+.budget-row label{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px;
+  border-radius:14px;
+  cursor:pointer;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  transition:.3s;
+}
+.budget-row input{
+  appearance:none;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  display:grid;
+  place-content:center;
+}
+.budget-row input::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  transform:scale(0);
+  transition:.25s;
+}
+.budget-row input:checked::before{
+  transform:scale(1);
+}
+.budget-row label:hover{
+  transform:translateY(-2px);
+}
+.budget-row label:has(input:checked){
+  background:rgba(0,242,254,.18);
+  box-shadow:0 0 25px rgba(0,242,254,.35);
+}
+
+/* ================= SEND BUTTON ================= */
+.send-btn{
+  width:100%;
+  padding:14px;
+  background:var(--accent);
+  color:#000;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+.send-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px rgba(0,242,254,.4);
+}
+
+/* ================= TRUST NOTE ================= */
+.trust-note{
+  margin-top:10px;
+  font-size:13px;
+  opacity:.8;
+  text-align:center;
+}
+
+/* ================= MODAL ================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  justify-content:center;
+  align-items:center;
+}
+.modal-content{
+  background:#1e293b;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  border:1px solid var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+  .dashboard-wrapper{
+    grid-template-columns:1fr;
+  }
+}

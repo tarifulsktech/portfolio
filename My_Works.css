@@ -1,0 +1,144 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:linear-gradient(#f4f7fb,#e8eef7);
+}
+
+/* BACK HOME */
+.back-home{
+  position:fixed;
+  top:20px;
+  left:20px;
+  width:44px;
+  height:44px;
+  background:#0b3c74;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  z-index:1000;
+}
+
+/* SECTION */
+.myworks{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+  text-align:center;
+}
+
+.myworks h1{
+  font-size:42px;
+  color:#0b3c74;
+}
+
+.subtitle{
+  margin:12px 0 50px;
+  color:#555;
+}
+
+/* GRID */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.project-card{
+  position:relative;
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  text-align:left;
+  transform:translateY(40px);
+  opacity:0;
+  transition:1s;
+}
+
+.project-card.show{
+  transform:none;
+  opacity:1;
+}
+
+.project-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.5s;
+}
+
+.project-card:hover img{
+  transform:scale(1.08);
+}
+
+/* BADGE */
+.fy-badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#ff9800;
+  color:#fff;
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;
+}
+
+.pulse{
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,152,0,.7);}
+  70%{box-shadow:0 0 0 15px rgba(255,152,0,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,152,0,0);}
+}
+
+/* TEXT */
+.project-card h2{margin:15px 0;color:#0b3c74;}
+.desc{color:hsl(0, 0%, 0%);font-size:15px}
+
+/* TAGS */
+.tags span{
+  background:#eef4ff;
+  color:#0b3c74;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:13px;
+  margin:6px 6px 0 0;
+  display:inline-block;
+}
+
+/* BUTTONS */
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.buttons button{
+  flex:1;
+  padding:10px;
+  border:none;
+  background:#0b3c74;
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.buttons .outline{
+  background:#fff;
+  color:#0b3c74;
+  border:1px solid #0b3c74;
+}

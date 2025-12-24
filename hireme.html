@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Me | Portfolio</title>
+
+  <link rel="stylesheet" href="./hireme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<!-- ❌ body class REMOVED -->
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar">
+  <a href="./index.html" class="back-link">
+    <i class="fas fa-arrow-left"></i> Back Home
+  </a>
+
+  <div class="theme-btns">
+    <button onclick="changeTheme('light')">Light</button>
+    <button onclick="changeTheme('dark')">Dark</button>
+    <button onclick="changeTheme('gradient')">Gradient</button>
+  </div>
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+<div class="dashboard-wrapper">
+
+  <!-- ========== LEFT PANEL ========== -->
+  <aside class="left-panel">
+
+    <div class="hero-text">
+      <span class="status-pill">
+        <i class="fas fa-circle"></i> Available for Work
+      </span>
+      <h1>Let’s Work Together</h1>
+      <p>Building clean, fast & scalable web applications using modern technologies.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <h3>5+</h3>
+        <span>Projects</span>
+      </div>
+      <div class="stat-box">
+        <h3>100%</h3>
+        <span>Client Satisfaction</span>
+      </div>
+      <div class="stat-box">
+        <h3>3–7</h3>
+        <span>Days Delivery</span>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="grid-card">
+        <h4><i class="fas fa-tasks"></i> My Process</h4>
+        <div class="mini-steps">
+          <span>01 Req</span>
+          <span>02 Design</span>
+          <span>03 Dev</span>
+          <span>04 Test</span>
+        </div>
+      </div>
+
+      <div class="grid-card">
+        <h4><i class="fas fa-clock"></i> Timeline</h4>
+        <p>Simple projects: 3–5 days<br>Complex projects: 7–10 days</p>
+      </div>
+    </div>
+
+    <div class="tech-stack">
+      <h3>Tech Stack</h3>
+      <div class="tech-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Flask</span>
+        <span>SQLite</span>
+        <span>Git</span>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <h3>What Clients Say</h3>
+      <div class="testimonial-box">
+        “Professional, clean code and very responsive.”  
+        <br><b>— Client Sunil Kumar</b>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <h3>FAQ</h3>
+      <details>
+        <summary>Do you provide backend support?</summary>
+        <p>Yes. Flask + SQLite / MySQL supported.</p>
+      </details>
+      <details>
+        <summary>Is post-delivery support included?</summary>
+        <p>Yes. Basic support is always included.</p>
+      </details>
+    </div>
+
+  </aside>
+
+  <!-- ========== PRICING PANEL ========== -->
+  <section class="pricing-panel">
+    <h3>Pricing Plans</h3>
+
+    <div class="price-list">
+      <div class="price-item">
+        <span>Basic</span>
+        <b>₹2500</b>
+        <small>Landing page</small>
+      </div>
+
+      <div class="price-item featured">
+        <span>Standard</span>
+        <b>₹4000</b>
+        <small>Multi-page + backend</small>
+      </div>
+
+      <div class="price-item">
+        <span>Premium</span>
+        <b>₹8000</b>
+        <small>Full-stack solution</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FORM PANEL ========== -->
+  <section class="form-panel">
+    <form id="hireForm" class="glass-card">
+
+      <h2>Hire Me</h2>
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <div class="budget-row">
+        <label><input type="radio" name="budget" value="2500"> 2500</label>
+        <label><input type="radio" name="budget" value="4000" checked> 4000</label>
+        <label><input type="radio" name="budget" value="8000"> 8000</label>
+      </div>
+
+      <textarea name="message" placeholder="Describe your project..." rows="3" required></textarea>
+
+      <button type="submit" class="send-btn">
+        <i class="fas fa-paper-plane"></i> Send Request
+      </button>
+
+      <p class="trust-note">
+        <i class="fas fa-lock"></i> Your information is 100% secure
+      </p>
+
+    </form>
+  </section>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <i class="fas fa-check-circle"></i>
+    <h2>Thank you for your request✅!</h2>
+    <p> I’ll be in touch with you very soon.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script src="./hireme.js"></script>
+</body>
+</html>
